@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+
+<p class="field">
+  <strong>Avatar:</strong>
+  <%= image_tag @client.avatar.url(:small) %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @client.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @client.last_name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @client.type_id %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @client.number_id %>
+</p>
+
+<%#*<p>
+  <strong>Birthdate:</strong>
+  <%= @client.birthdate %>
+<%#*</p>%>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @client.gender %>
+</p>
+
+<p>
+  <b>Departament:</b>
+  <%= @client.departament %>
+  
+</p>
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
