@@ -1,0 +1,40 @@
+es:
+  models:
+    clients:
+      title: "Clientes"
+      showTitle: "Cliente"
+      new: "Registrar cliente"
+      edit: "Modificar cliente"
+  attributes:
+    clients:
+      first_name: "Nombre"
+      last_name: "Apellido"
+      type_document: "Tipo de documento"
+      number_document: "Número de documento"
+      gender: "Sexo"
+      country: "País"
+      departament: "Departamento"
+      city: "Ciudad"
+  actions:
+    log_in: "Iniciar sesión"
+    log_out: "Terminar sesión"
+    departaments: "Departamentos"
+    cities: "Ciudades"
+    clients: "Clintes"
+    create: "Crear"
+    modify: "Modificar"
+    delete: "Eliminar"
+    remember_me: "Recordarme"
+    back: "Regresar"
+    save_changes: "Guardar cambios"
+    edit: "Editar"
+    show: "Ver"
+    save: "Guardar"
+    go_to_list: "Volver"
+  mongoid:
+    errors:
+      models:
+        client:
+          attributes:
+            city:
+              blank: "No debe estar en blanco la ciudad"
