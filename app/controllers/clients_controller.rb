@@ -4,7 +4,10 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    #@clients = Client.all
+    
+    @clients = Client.paginate(:page => params[:page], :per_page => 10)
+    # raise @clients.inspect.to_s
   end
 
   # GET /clients/1
@@ -25,6 +28,7 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(client_params)
+    # raise @client.inspect.to_s
 
     # unless params[:client].try(:[], 'birthdate(1i)').blank?
     #  @client.birthdate = Date.civil(params[:client].try(:[], 'birthdate(1i)').to_i,params[:client].try(:[], 'birthdate(2i)').to_i,params[:client].try(:[], 'birthdate(3i)').to_i)
@@ -35,6 +39,7 @@ class ClientsController < ApplicationController
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render :show, status: :created, location: @client }
       else
+        # raise @client.inspect.to_s
         format.html { render :new }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
@@ -73,6 +78,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:first_name, :last_name, :type_id, :number_id, :gender, :country, :departament, :city, :avatar)
+      params.require(:client).permit(:first_name, :last_name, :type_id, :number_id, :gender, :country_id, :avatar)
     end
 end

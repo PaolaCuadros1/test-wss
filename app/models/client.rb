@@ -4,7 +4,8 @@ class Client
     # devise :database_authenticatable, :registerable, :confirmable, :recoverable
     devise :database_authenticatable, :registerable, :recoverable
   
-    #belongs_to :departament
+    
+    
     
     field :avatar, type: String
     has_mongoid_attached_file :avatar
@@ -18,7 +19,10 @@ class Client
     field :number_id, type: String
     # field :birthdate, type: Date
     field :gender, type: String
-    field :country, type: String
-    field :departament, type: Integer
-    field :city, type: Integer
+    field :country_id, type: String
+    
+    validates :first_name, :last_name, presence: true
+    belongs_to :country
+    # belongs_to :city
+    
 end
