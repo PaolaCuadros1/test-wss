@@ -19,10 +19,10 @@ class Client
     field :number_id, type: String
     # field :birthdate, type: Date
     field :gender, type: String
-    field :country_id, type: String
     
     validates :first_name, :last_name, presence: true
-    belongs_to :country
-    # belongs_to :city
+    belongs_to :country, foreign_key: "country_id", primary_key: "country_id"
+    belongs_to :city, foreign_key: "city_id", primary_key: "code"
+    belongs_to :departament, foreign_key: "departament_id", primary_key: "code"
     
 end

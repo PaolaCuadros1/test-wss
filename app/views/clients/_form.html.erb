@@ -65,7 +65,7 @@
     
     <tr>
       <th><%= form.label I18n.t('attributes.clients.departament'), class: "flow-text" %></th>
-      <td><%= form.select :departament, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
+      <td><%= form.select :departament_id, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
     </tr>
     
     <tr>

@@ -35,12 +35,12 @@
       
       <tr>
         <th><%= I18n.t('attributes.clients.country') %></th>
-        <td><%= @client.country %></td>
+        <td><%= @client.country_id.blank? ? '' : @client.country.name %></td>
       </tr>
       
       <tr>
         <th><%= I18n.t('attributes.clients.departament') %></th>
-        <td><%= @client.departament %></td>
+        <td><%= @client.departament_id.blank? ? '' : @client.departament.name %></td>
       </tr>
       
       <tr>
