@@ -11,75 +11,74 @@
     </div>
   <% end %>
   
-  <div class="row" >
-    <div class="field">
-      <%= form.label :avatar, class: "validate" %>
-      <%= form.file_field :avatar %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="input-field col s6">
-      <%= form.label :first_name, class: "validate" %>
-      <%= form.text_field :first_name, class: 'validate', id: :client_first_name %>
-    </div>
-    <div class="input-field col s6">
-      <%= form.label :last_name, class: "validate" %>
-      <%= form.text_field :last_name, class: 'validate',id: :client_last_name %>
-    </div>
-  </div>
-  
-  <div class="row"> 
-    <div class="col s12 m6">
-      <%= form.label :type_id, class: "validate" %>
-      <%= form.select :type_id, {
+  <table class="responsive-table bordered" >
+    <tr>
+      <th><%= form.label :avatar, class: "flow-text" %></th>
+      <td><%= form.file_field :avatar %></td>
+    </tr>
+    
+    <% unless client.new_record? %>
+      <tr>
+        <th colspan="2" style="text-align: center;"><%= image_tag @client.avatar.url(:small) %></th>
+      </tr>
+    <% end %>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.first_name'), class: "flow-text" %></th>
+      <td><%= form.text_field :first_name, class: 'validate input-form', id: :client_first_name, required: 'required' %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.last_name'), class: "flow-text" %></th>
+      <td><%= form.text_field :last_name, class: 'validate input-form',id: :client_last_name, required: 'required' %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.type_document'), class: "flow-text" %></th>
+      <td>
+        <%= form.select :type_id, {
                                   "Adulto sin identificación" => "1", 
                                   "Cédula" => "2", 
                                   "Cédula extranjera" => "3", 
                                   "Menor sin identificación" => "4", 
                                   "Tarjeta de identificación" => "5", 
-                                  "Pasaporte" => "6"}, {include_blank: false }, {:class => "browser-default"} %>
-      
-    </div>
-    <div class="input-field col s6">
-      <%= form.label :number_id, class: "validate" %>
-      <%= form.text_field :number_id, class: "validate", id: :client_number_id %>
-    </div>
-  </div>
-  
-  <div class="row">
-
-    <div class="row">
-      <div class="col s12 m6">
-        <%= form.label :gender %>
-        <%= form.select :gender, {
+                                  "Pasaporte" => "6"}, {include_blank: false }, {:class => "browser-default input-form"} %>
+      </td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.number_document'), class: "flow-text" %></th>
+      <td><%= form.text_field :number_id, class: "validate input-form", id: :client_number_id, required: 'required' %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.gender'), class: "flow-text" %></th>
+      <td><%= form.select :gender, {
                                   "Female" => "Female", 
-                                  "Male" => "Male"}, {include_blank: false }, {:class => "browser-default"} %>
-      </div>
-    </div>
-  </div>
-  
-
-  <div class="row" >
-    <div class="col s12 m6">
-      <%= form.label :country %><br />
-      <%= form.select :country, Country.all.order_by(['name', 1]).map{|c| [c.name, c.country_id]}, {include_blank: false }, {:class => "browser-default"}  %>
-    </div>
-  
-    <div class="col s12 m6">
-      <%= form.label :departament %><br />
-      <%= form.select :departament, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default"}  %>
-    </div>
-  </div>
-  
-  
-  <div class="field">
-    <%= form.label :city %><br />
-    <%= form.select :city, 
-      City.where(depart_id: Departament.all.order_by(["name", 1]).first.code).order_by(['cap', 1], ['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default"} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+                                  "Male" => "Male"}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.country'), class: "flow-text" %></th>
+      <td><%= form.select :country_id, Country.all.order_by(['name', 1]).map{|c| [c.name, c.country_id]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.departament'), class: "flow-text" %></th>
+      <td><%= form.select :departament, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
+    </tr>
+    
+    <tr>
+      <th><%= form.label I18n.t('attributes.clients.city'), class: "flow-text" %></th>
+      <td><%= form.select :city_id,  City.where(depart_id: Departament.all.order_by(["name", 1]).first.code).order_by(['cap', 1], ['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
+    </tr>
+    
+    <tr>
+      <th colspan="2" style="text-align: center;">
+        <%= link_to I18n.t('actions.go_to_list'),clients_path, class: "btn waves-effect waves-light pink" %>
+        <%= form.submit I18n.t('actions.' + (client.new_record? ? 'create' : 'save_changes')), class: "btn waves-effect waves-light pink" %>
+      </th>
+    </tr>
+    
+  </table>
 <% end %>

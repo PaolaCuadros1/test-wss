@@ -1,45 +1,68 @@
-<p id="notice"><%= notice %></p>
+    <span class="collection-header"><h2><%= I18n.t('models.clients.showTitle') %>: <%= @client.first_name %> <%= @client.last_name %></h2></span>
+    <table class="responsive-table bordered" >
+      <tr>
+        <th><p id="notice"><%= notice %></p></th>
+      </tr>
+      
+      <tr>
+        <th style="text-align: center;" colspan="2"><%= image_tag @client.avatar.url(:small) %></th>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.first_name') %></th>
+        <td><%= @client.first_name %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.last_name') %></th>
+        <td><%= @client.last_name %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.type_document') %></th>
+        <td><%= @client.type_id %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.number_document') %></th>
+        <td><%= @client.number_id %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.gender') %></th>
+        <td><%= @client.gender %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.country') %></th>
+        <td><%= @client.country %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.departament') %></th>
+        <td><%= @client.departament %></td>
+      </tr>
+      
+      <tr>
+        <th><%= I18n.t('attributes.clients.city') %></th>
+        <td><%= @client.city.blank? ? '' : @client.city.name %></td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <%= link_to I18n.t('actions.go_to_list'), clients_path, class: 'btn waves-effect waves-light pink' %>
+          <%= link_to I18n.t('actions.modify'), edit_client_path(@client), class: 'btn waves-effect waves-light pink' %> 
+        </td>
+      </tr>
+    </table>
 
 
-<p class="field">
-  <strong>Avatar:</strong>
-  <%= image_tag @client.avatar.url(:small) %>
-</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @client.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @client.last_name %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @client.type_id %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @client.number_id %>
-</p>
 
 <%#*<p>
   <strong>Birthdate:</strong>
   <%= @client.birthdate %>
 <%#*</p>%>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @client.gender %>
-</p>
 
-<p>
-  <b>Departament:</b>
-  <%= @client.departament %>
-  
-</p>
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+

@@ -1,7 +1,3 @@
-<div class="container">
-    <h2 class="header" >New Client</h2>
+<h2 class="header" ><%= I18n.t('models.clients.new') %></h2>
+<%= render 'clients/form', client: @client %>
 
-    <%= render 'clients/form', client: @client %>
-
-    <%= link_to 'Back', clients_path %>
-</div>

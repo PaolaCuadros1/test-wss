@@ -2,15 +2,30 @@
 <html>
   <head>
     <title>Clients</title>
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <% if user_signed_in? %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <li><%= link_to I18n.t('actions.clients'), clients_path %></li>
+             <li><%= link_to I18n.t('actions.cities'), cities_path %></li>
+             <li><%= link_to I18n.t('actions.departaments'), departaments_path %></li>
+             <li><%= link_to I18n.t('actions.log_out'), destroy_user_session_path %></li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
 
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
