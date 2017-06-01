@@ -11,7 +11,7 @@
     </div>
   <% end %>
   
-  <table class="responsive-table bordered" >
+  <table class="" >
     <tr>
       <th><%= form.label :avatar, class: "flow-text" %></th>
       <td><%= form.file_field :avatar %></td>
@@ -52,6 +52,11 @@
     </tr>
     
     <tr>
+      <th><%= form.label I18n.t('attributes.clients.birthdate'), class: "flow-text" %></th>
+      <td><%= form.date_field :birthdate, class: "validate input-form", id: :birthdate, required: 'required' %></td>
+    </tr>
+    
+    <tr>
       <th><%= form.label I18n.t('attributes.clients.gender'), class: "flow-text" %></th>
       <td><%= form.select :gender, {
                                   "Female" => "Female", 
@@ -70,7 +75,7 @@
     
     <tr>
       <th><%= form.label I18n.t('attributes.clients.city'), class: "flow-text" %></th>
-      <td><%= form.select :city_id,  City.where(depart_id: Departament.all.order_by(["name", 1]).first.code).order_by(['cap', 1], ['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
+      <td><%= form.select :city_id,  City.order_by(["name", 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
     </tr>
     
     <tr>

@@ -17,7 +17,7 @@ class Client
     field :last_name, type: String
     field :type_id, type: String
     field :number_id, type: String
-    # field :birthdate, type: Date
+    field :birthdate, type: Date
     field :gender, type: String
     
     validates :first_name, :last_name, presence: true

@@ -15,6 +15,11 @@ es:
       country: "País"
       departament: "Departamento"
       city: "Ciudad"
+      birthdate: "Fecha de nacimiento"
+    cities:
+      cod_city: "Código de la ciudad"
+      nom_city: "Nombre de la ciudad"
+      dep_city: "Código del departamento"
   actions:
     log_in: "Iniciar sesión"
     log_out: "Terminar sesión"

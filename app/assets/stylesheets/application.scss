@@ -14,15 +14,33 @@
 
 @import 'materialize';
 
-.flow-text{
-    font-weight: bold !important;
-    color: black !important ;
-    font-size: 15px !important;
+
+@media only screen and (max-width: 992px) {
+  /* line 288, /usr/local/rvm/gems/ruby-2.4.1/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/_global.scss */
+  .hide-on-med-and-down {
+    display: block !important;
+  }
+  
+  nav .brand-logo {
+    left: 10% !important ;
+    transform: translateX(-50%);
+  }
+  
+  nav ul a {
+    font-size: 20px !important;
+  }
+  
+  table tr th{
+    font-size: 22px;
+  }
+  table tr td{
+    font-size: 22px;
+  }
+  
+  .btn, .waves-effect, .waves-light, .pink{
+     font-size: 20px  !important;
+  }
 }
 
-.input-form{
-    border: 1px solid !important;
-    margin: 0 0 0 0 !important;
-    border-radius: 10px !important;
-    border-color: pink !important;
-}
+
+

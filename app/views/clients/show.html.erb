@@ -1,5 +1,6 @@
+ 
     <span class="collection-header"><h2><%= I18n.t('models.clients.showTitle') %>: <%= @client.first_name %> <%= @client.last_name %></h2></span>
-    <table class="responsive-table bordered" >
+    <table class="" >
       <tr>
         <th><p id="notice"><%= notice %></p></th>
       </tr>
@@ -29,6 +30,11 @@
       </tr>
       
       <tr>
+        <th><%= I18n.t('attributes.clients.birthdate') %></th>
+        <td><%= @client.birthdate %></td>
+      </tr>
+      
+      <tr>
         <th><%= I18n.t('attributes.clients.gender') %></th>
         <td><%= @client.gender %></td>
       </tr>
@@ -55,6 +61,7 @@
         </td>
       </tr>
     </table>
+
 
 
 

@@ -1,4 +1,4 @@
-class User
+class User 
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,7 +14,7 @@ class User
   field :reset_password_sent_at, type: Time
 
   ## Rememberable
-  # field :remember_created_at, type: Time
+  field :remember_created_at, type: Time
 
   ## Trackable
   field :sign_in_count,      type: Integer, default: 0

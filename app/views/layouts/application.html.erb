@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Clients</title>
-    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,17 +14,27 @@
              <li><%= link_to I18n.t('actions.clients'), clients_path %></li>
              <li><%= link_to I18n.t('actions.cities'), cities_path %></li>
              <li><%= link_to I18n.t('actions.departaments'), departaments_path %></li>
-             <li><%= link_to I18n.t('actions.log_out'), destroy_user_session_path %></li>
+             <li><%= link_to I18n.t('actions.log_out'), destroy_user_session_path, :method => :delete %></li>
           </ul>
         <% end %>
       </div>
     </nav>
+    <link href="http://materializecss.com/css/ghpages-materialize.css" rel="stylesheet">
 
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+    
+    
+    <main>
+      <div class="section no-pad-bot cover" id="index-banner">
+        <div class="container">
+          <div class="row center">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
+      
   </body>
 </html>
