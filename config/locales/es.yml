@@ -5,8 +5,14 @@ es:
       showTitle: "Cliente"
       new: "Registrar cliente"
       edit: "Modificar cliente"
+      msj_delete: "¿Esta seguro de eliminar este cliente?"
+    cities:
+      title: "Ciudades"
+    departaments:
+      title: "Departamentos"
   attributes:
     clients:
+      avatar: "Imagen"
       first_name: "Nombre"
       last_name: "Apellido"
       type_document: "Tipo de documento"
@@ -16,10 +22,18 @@ es:
       departament: "Departamento"
       city: "Ciudad"
       birthdate: "Fecha de nacimiento"
+      female: "Femenino"
+      male: "Masculino"
     cities:
       cod_city: "Código de la ciudad"
       nom_city: "Nombre de la ciudad"
-      dep_city: "Código del departamento"
+      cod_dep_city: "Código del departamento"
+      dep_city: "Departamento"
+    departaments:
+      cod_departament: "Código"
+      nom_departament: "Nombre"
+      cod_country_dep: "Código del país"
+      country_departament: "País"
   actions:
     log_in: "Iniciar sesión"
     log_out: "Terminar sesión"
@@ -43,3 +57,8 @@ es:
           attributes:
             city:
               blank: "No debe estar en blanco la ciudad"
+  will_paginate:
+    next_label: "Siguiente"
+    previous_label: "Anterior"
+    page_gap: ""
+              
