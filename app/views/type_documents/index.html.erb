@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Type Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_documents.each do |type_document| %>
+      <tr>
+        <td><%= type_document.name %></td>
+        <td><%= type_document.type %></td>
+        <td><%= link_to 'Show', type_document %></td>
+        <td><%= link_to 'Edit', edit_type_document_path(type_document) %></td>
+        <td><%= link_to 'Destroy', type_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Type Document', new_type_document_path %>

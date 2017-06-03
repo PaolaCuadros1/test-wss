@@ -23,3 +23,11 @@ open("db/cities.txt") do |cities|
     City.create!(:code => city_id.to_i, :name => name, :depart_id => depart_id.to_i, :cap => cap)
   end
 end
+
+TypeDocument.delete_all
+open("db/type_document.txt") do |typeDocument|
+  typeDocument.read.each_line do |tDocument|
+    type, name, cap = tDocument.chomp.split("|")
+    TypeDocument.create!(:type => type.to_i, :name => name)
+  end
+end

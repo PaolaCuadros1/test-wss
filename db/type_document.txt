@@ -1,0 +1,6 @@
+1 | Cédula de ciudadania
+2 | Cédula extranjera
+3 | Tarjeta de identificación
+4 | Pasaporte
+5 | Adulto sin identificación
+6 | Menor sin identificación
