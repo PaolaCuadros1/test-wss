@@ -6,4 +6,7 @@ class City
   field :name, type: String
   field :depart_id, type: Integer
   field :cap, type: Integer
+  
+  belongs_to :departament, foreign_key: "depart_id", primary_key: "code"
+  
 end

@@ -5,4 +5,6 @@ class Departament
   field :name, type: String
   field :country_id, type: String
   
+  belongs_to :country, foreign_key: "country_id", primary_key: "country_id"
+  
 end
