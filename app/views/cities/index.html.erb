@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cities</h1>
+<h4 class="indigo-text" style="color: #e91e63 !important" ><%= I18n.t('models.cities.title') %></h4>
 
 <table>
   <thead>
     <tr>
-      <th><%= I18n.t('attributes.cities.cod_city') %></th>
       <th><%= I18n.t('attributes.cities.nom_city') %></th>
       <th><%= I18n.t('attributes.cities.dep_city') %></th>
       <th></th>
@@ -15,9 +14,8 @@
   <tbody>
     <% @cities.each do |city| %>
       <tr>
-        <td><%= city.code %></td>
         <td><%= city.name %></td>
-        <td><%= city.depart_id %></td>
+        <td><%= city.depart_id.blank? ? '' : city.departament.name %></td>
         <td><%= link_to I18n.t('actions.show') , city %></td>
       </tr>
     <% end %>
@@ -25,10 +23,6 @@
         <td colspan="8" style="text-align: center;">
           <%= will_paginate @cities %>
         </td>
-      </tr>
+    </tr>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New City', new_city_path %>

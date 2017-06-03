@@ -1,19 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>City:</strong>
-  <%= @city.city_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @city.name %>
-</p>
-
-<p>
-  <strong>Depart:</strong>
-  <%= @city.depart_id %>
-</p>
-
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
+<table>
+  <tr>
+    <th colspan="2"><p id="notice"><%= notice %></p></th>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.cities.cod_city') %></th>
+    <td><%= @city.code %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.cities.nom_city') %></th>
+    <td><%= @city.name %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.cities.cod_dep_city') %></th>
+    <td><%= @city.depart_id %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.cities.dep_city') %></th>
+    <td><%= @city.depart_id.blank? ? '' : @city.departament.name %></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="text-align: center;">
+      <%= link_to I18n.t('actions.go_to_list'), cities_path, class: 'btn waves-effect waves-light pink' %>
+      <%# link_to I18n.t('actions.modify'), edit_city_path(@city), class: 'btn waves-effect waves-light pink' %> 
+    </td>
+  </tr>
+</table>

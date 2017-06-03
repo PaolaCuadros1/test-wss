@@ -13,7 +13,7 @@
   
   <table class="" >
     <tr>
-      <th><%= form.label :avatar, class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.avatar') %></th>
       <td><%= form.file_field :avatar %></td>
     </tr>
     
@@ -24,57 +24,51 @@
     <% end %>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.first_name'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.first_name') %></th>
       <td><%= form.text_field :first_name, class: 'validate input-form', id: :client_first_name, required: 'required' %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.last_name'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.last_name') %></th>
       <td><%= form.text_field :last_name, class: 'validate input-form',id: :client_last_name, required: 'required' %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.type_document'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.type_document')%></th>
       <td>
-        <%= form.select :type_id, {
-                                  "Adulto sin identificación" => "1", 
-                                  "Cédula" => "2", 
-                                  "Cédula extranjera" => "3", 
-                                  "Menor sin identificación" => "4", 
-                                  "Tarjeta de identificación" => "5", 
-                                  "Pasaporte" => "6"}, {include_blank: false }, {:class => "browser-default input-form"} %>
+        <%= form.select :type_id, TypeDocument.all.order_by(['name', 1]).map{|c| [c.name, c.type]}, {include_blank: false }, {:class => "browser-default input-form"} %>
       </td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.number_document'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.number_document') %></th>
       <td><%= form.text_field :number_id, class: "validate input-form", id: :client_number_id, required: 'required' %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.birthdate'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.birthdate') %></th>
       <td><%= form.date_field :birthdate, class: "validate input-form", id: :birthdate, required: 'required' %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.gender'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.gender') %></th>
       <td><%= form.select :gender, {
-                                  "Female" => "Female", 
-                                  "Male" => "Male"}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
+                                  I18n.t('attributes.clients.female') => I18n.t('attributes.clients.female'), 
+                                  I18n.t('attributes.clients.male') => I18n.t('attributes.clients.male')}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.country'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.country') %></th>
       <td><%= form.select :country_id, Country.all.order_by(['name', 1]).map{|c| [c.name, c.country_id]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.departament'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.departament') %></th>
       <td><%= form.select :departament_id, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
     </tr>
     
     <tr>
-      <th><%= form.label I18n.t('attributes.clients.city'), class: "flow-text" %></th>
+      <th><%= I18n.t('attributes.clients.city') %></th>
       <td><%= form.select :city_id,  City.order_by(["name", 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"} %></td>
     </tr>
     

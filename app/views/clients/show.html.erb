@@ -1,5 +1,5 @@
  
-    <span class="collection-header"><h2><%= I18n.t('models.clients.showTitle') %>: <%= @client.first_name %> <%= @client.last_name %></h2></span>
+    <h4 class="indigo-text" style="color: #e91e63 !important" ><%= I18n.t('models.clients.showTitle') %>: <%= @client.first_name %> <%= @client.last_name %></h4>
     <table class="" >
       <tr>
         <th><p id="notice"><%= notice %></p></th>
@@ -21,7 +21,7 @@
       
       <tr>
         <th><%= I18n.t('attributes.clients.type_document') %></th>
-        <td><%= @client.type_id %></td>
+        <td><%= @client.type_id.blank? ? '' : @client.typeDocument.name %></td>
       </tr>
       
       <tr>

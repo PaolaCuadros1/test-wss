@@ -8,7 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
+        
+        <a  class="brand-logo"><%= image_tag "cat.png", style: "width: 50% !important; margin-left: 10% !important;" %></a>
         <% if user_signed_in? %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
              <li><%= link_to I18n.t('actions.clients'), clients_path %></li>

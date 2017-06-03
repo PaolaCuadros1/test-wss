@@ -1,6 +1,6 @@
   <p id="notice"><%= notice %></p>
   
-  <span class="collection-header"><h2><%= I18n.t('models.clients.title') %></h2></span>
+  <h4 class="indigo-text" style="color: #e91e63 !important" ><%= I18n.t('models.clients.title') %></h4>
   <table>
     <thead>
       <tr>
@@ -19,13 +19,13 @@
         <tr>
           <td><%= client.first_name %></td>
           <td><%= client.last_name %></td>
-          <td><%= client.type_id %></td>
+          <td><%= client.type_id.blank? ? '' : client.typeDocument.name %></td>
           <td><%= client.number_id %></td>
           <td><%= client.city.blank? ? '' : client.city.name %></td>
           <%#*<td><%= client.birthdate %></td><%#*%>
           <td><%= link_to I18n.t('actions.show') , client %></td>
           <td><%= link_to I18n.t('actions.edit') , edit_client_path(client) %></td>
-          <td><%= link_to I18n.t('actions.delete') , client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to I18n.t('actions.delete') , client, method: :delete, data: { confirm: I18n.t('models.clients.msj_delete') } %></td>
         </tr>
       <% end %>
       <tr>
