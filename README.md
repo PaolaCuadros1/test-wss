@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto realizado como test para ingresar a la empresa Worldwide Systems Services SAS. Este proyecto fue realizado en el lenguaje ruby vesión 2.4.1 con el framework rails versión 5.1.1 y RMV versión 1.29.1
 
-Things you may want to cover:
+Para su correcto uso debe realizar las siguientes especificaciones:
 
-* Ruby version
+* Clonar el proyecto: git clone https://github.com/PaolaCuadros1/test-wss.git
 
-* System dependencies
+* Se debe instalar RVM el cual permite manejar varias versiones de ruby, para realizar la instalación correcta -> https://rvm.io/
 
-* Configuration
+* Versión de ruby usada: 2.4.1, sino tiene la versión instalada debe ejecutar en la consola: rvm install ruby-2.4.1
 
-* Database creation
+* Versión de rails 5.1.1
 
-* Database initialization
+* Para instalar todas gemas necesarias ejecutar: bundle install
 
-* How to run the test suite
+* Base de datos: MongoDB, versión: 2.6.12
 
-* Services (job queues, cache servers, search engines, etc.)
+* Para importar los datos necesarios debe ejecutar en la consola: bundle exec rake db:seed
 
-* Deployment instructions
+* Manejo de avatar con paperclip -> para su correcta instalación seguir los siguientes pasos: https://github.com/thoughtbot/paperclip#requirements
 
-* ...
+* Paginación relizada con: Kaminari
