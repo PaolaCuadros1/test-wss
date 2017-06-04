@@ -61,4 +61,10 @@ es:
     next_label: "Siguiente"
     previous_label: "Anterior"
     page_gap: ""
+  successful:
+    models:
+      clients:
+        created: "El cliente fue creado correctamente."
+        updated: "El cliente fue modificaco correctamente."
+        deleted: "El cliente fue eliminado correctamente."
               
