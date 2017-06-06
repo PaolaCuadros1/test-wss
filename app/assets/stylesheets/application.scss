@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require dataTables/jquery.dataTables
+ *= require dataTables/bootstrap/2/jquery.dataTables.bootstrap
  */
 
 @import 'materialize';
@@ -44,6 +46,14 @@
 
 header, main, footer{
   padding-left: 0px !important;
+}
+
+select {
+  display: -webkit-inline-box !important;
+}
+
+.paginate_button{
+  padding: 0em 0em !important;
 }
 
 
