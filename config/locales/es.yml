@@ -37,6 +37,9 @@ es:
   actions:
     log_in: "Iniciar sesión"
     log_out: "Terminar sesión"
+    remember_me: "Recordarme"
+    password: "Contraseña"
+    email: "Email"
     departaments: "Departamentos"
     cities: "Ciudades"
     clients: "Clintes"
