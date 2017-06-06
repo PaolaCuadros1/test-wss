@@ -42,7 +42,7 @@ es:
     email: "Email"
     departaments: "Departamentos"
     cities: "Ciudades"
-    clients: "Clintes"
+    clients: "Clientes"
     create: "Crear"
     modify: "Modificar"
     delete: "Eliminar"

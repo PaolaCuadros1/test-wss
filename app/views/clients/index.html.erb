@@ -1,7 +1,7 @@
   <p id="notice"><%= notice %></p>
   
   <h4 class="indigo-text" style="color: #e91e63 !important" ><%= I18n.t('models.clients.title') %></h4>
-  <table>
+  <table id="datatable">
     <thead>
       <tr>
         <th><%= I18n.t('attributes.clients.first_name') %></th>
@@ -9,8 +9,7 @@
         <th><%= I18n.t('attributes.clients.type_document') %></th>
         <th><%= I18n.t('attributes.clients.number_document') %></th>
         <th><%= I18n.t('attributes.clients.city') %></th>
-        <!-- <th>Birthdate</th>-->
-        <th colspan="3"></th>
+        <th></th>
       </tr>
     </thead>
   
@@ -22,17 +21,9 @@
           <td><%= client.type_id.blank? ? '' : client.typeDocument.name %></td>
           <td><%= client.number_id %></td>
           <td><%= client.city.blank? ? '' : client.city.name %></td>
-          <%#*<td><%= client.birthdate %></td><%#*%>
           <td><%= link_to I18n.t('actions.show') , client %></td>
-          <td><%= link_to I18n.t('actions.edit') , edit_client_path(client) %></td>
-          <td><%= link_to I18n.t('actions.delete') , client, method: :delete, data: { confirm: I18n.t('models.clients.msj_delete') } %></td>
         </tr>
       <% end %>
-      <tr>
-        <td colspan="8" style="text-align: center;">
-          <%= will_paginate @clients %>
-        </td>
-      </tr>
     </tbody>
   </table>
   

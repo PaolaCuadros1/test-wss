@@ -58,6 +58,7 @@
         <td colspan="2" style="text-align: center;">
           <%= link_to I18n.t('actions.go_to_list'), clients_path, class: 'btn waves-effect waves-light pink' %>
           <%= link_to I18n.t('actions.modify'), edit_client_path(@client), class: 'btn waves-effect waves-light pink' %> 
+          <%= link_to I18n.t('actions.delete') , @client, method: :delete, class: 'btn waves-effect waves-light pink', data: { confirm: I18n.t('models.clients.msj_delete') } %>
         </td>
       </tr>
     </table>
