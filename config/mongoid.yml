@@ -1,6 +1,6 @@
 development:
   clients:
     default:
-      database: mongoid
+      database: test_paola
       hosts:
         - localhost:27017
