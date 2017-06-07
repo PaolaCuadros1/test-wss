@@ -20,4 +20,7 @@ Para su correcto uso debe realizar las siguientes especificaciones:
 
 * Manejo de avatar con paperclip -> para su correcta instalación seguir los siguientes pasos: https://github.com/thoughtbot/paperclip#requirements
 
-* Paginación relizada con: Kaminari
+* PAGINACIÓN REALIZADA CON: 
+* Kaminari -> Para el módulo de ciudades. http://railscasts.com/episodes/254-pagination-with-kaminari, https://github.com/kaminari/kaminari
+* jquery-datatables-rails -> Para los módulos de clientes y departamentos. => https://github.com/rweng/jquery-datatables-rails
+   con la instalación de Twitter Bootstrap 2
