@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :cities
-  resources :departaments
+  resources :departments
   resources :countries
   resources :clients
   

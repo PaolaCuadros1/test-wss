@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h4 class="indigo-text" style="color: #e91e63 !important" ><%= I18n.t('models.departments.title') %></h4>
+<table id="datatable">
+  <thead>
+    <tr>
+      <th><%= I18n.t('attributes.departments.nom_department') %></th>
+      <th><%= I18n.t('attributes.departments.country_department') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departments.each do |department| %>
+      <tr>
+        <td><%= department.name %></td>
+        <td><%= department.country_id.blank? ? '' : department.country.name %></td>
+        <td><%= link_to I18n.t('actions.show'), department %></td>
+      </tr>
+    <% end %>
+    <!--<tr>
+      <td colspan="8" style="text-align: center;">
+        <%# will_paginate @departments %>
+      </td>
+    </tr>-->
+  </tbody>
+</table>

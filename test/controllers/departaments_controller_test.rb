@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class DepartamentsControllerTest < ActionDispatch::IntegrationTest
+class DepartmentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @departament = departaments(:one)
+    @department = departments(:one)
   end
 
   test "should get index" do
-    get departaments_url
+    get departments_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_departament_url
+    get new_department_url
     assert_response :success
   end
 
-  test "should create departament" do
-    assert_difference('Departament.count') do
-      post departaments_url, params: { departament: { code: @departament.code, country_id: @departament.country_id, name: @departament.name } }
+  test "should create department" do
+    assert_difference('Department.count') do
+      post departments_url, params: { department: { code: @department.code, country_id: @department.country_id, name: @department.name } }
     end
 
-    assert_redirected_to departament_url(Departament.last)
+    assert_redirected_to department_url(Department.last)
   end
 
-  test "should show departament" do
-    get departament_url(@departament)
+  test "should show department" do
+    get department_url(@department)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_departament_url(@departament)
+    get edit_department_url(@department)
     assert_response :success
   end
 
-  test "should update departament" do
-    patch departament_url(@departament), params: { departament: { code: @departament.code, country_id: @departament.country_id, name: @departament.name } }
-    assert_redirected_to departament_url(@departament)
+  test "should update department" do
+    patch department_url(@department), params: { department: { code: @department.code, country_id: @department.country_id, name: @department.name } }
+    assert_redirected_to department_url(@department)
   end
 
-  test "should destroy departament" do
-    assert_difference('Departament.count', -1) do
-      delete departament_url(@departament)
+  test "should destroy department" do
+    assert_difference('Department.count', -1) do
+      delete department_url(@department)
     end
 
-    assert_redirected_to departaments_url
+    assert_redirected_to departments_url
   end
 end

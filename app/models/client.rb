@@ -23,7 +23,7 @@ class Client
     validates :first_name, :last_name, presence: true
     belongs_to :country, foreign_key: "country_id", primary_key: "country_id"
     belongs_to :city, foreign_key: "city_id", primary_key: "code"
-    belongs_to :departament, foreign_key: "departament_id", primary_key: "code"
+    belongs_to :department, foreign_key: "department_id", primary_key: "code"
     belongs_to :typeDocument, foreign_key: "type_id", primary_key: "type"
     
 end

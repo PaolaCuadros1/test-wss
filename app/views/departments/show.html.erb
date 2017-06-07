@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <th colspan="2"><p id="notice"><%= notice %></p></th>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.departments.cod_department') %></th>
+    <td><%= @department.code %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.departments.nom_department') %></th>
+    <td><%= @department.name %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.departments.cod_country_dep') %></th>
+    <td><%= @department.country_id %></td>
+  </tr>
+  
+  <tr>
+    <th><%= I18n.t('attributes.departments.country_department') %></th>
+    <td><%= @department.country_id.blank? ? '' : @department.country.name %></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="text-align: center;">
+      <%= link_to I18n.t('actions.go_to_list'), departments_path, class: 'btn waves-effect waves-light pink' %>
+      <%# link_to I18n.t('actions.modify'), edit_department_path(@department), class: 'btn waves-effect waves-light pink' %> 
+    </td>
+  </tr>
+</table>

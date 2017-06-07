@@ -63,8 +63,8 @@
     </tr>
     
     <tr>
-      <th><%= I18n.t('attributes.clients.departament') %></th>
-      <td><%= form.select :departament_id, Departament.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
+      <th><%= I18n.t('attributes.clients.department') %></th>
+      <td><%= form.select :department_id, Department.all.order_by(['name', 1]).map{|c| [c.name, c.code]}, {include_blank: false }, {:class => "browser-default input-form"}  %></td>
     </tr>
     
     <tr>

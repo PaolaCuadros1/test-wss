@@ -7,6 +7,6 @@ class City
   field :depart_id, type: Integer
   field :cap, type: Integer
   
-  belongs_to :departament, foreign_key: "depart_id", primary_key: "code"
+  belongs_to :department, foreign_key: "depart_id", primary_key: "code"
   
 end

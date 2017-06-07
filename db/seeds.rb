@@ -8,11 +8,11 @@ open("db/countries.txt") do |countries|
   end
 end
 
-Departament.delete_all
-open("db/departaments.txt") do |departaments|
-  departaments.read.each_line do |departament|
-    code, name, country_id = departament.chomp.split("|")
-    Departament.create!(:name => name, :code => code, :country_id => country_id.strip)
+Department.delete_all
+open("db/departments.txt") do |departments|
+  departments.read.each_line do |department|
+    code, name, country_id = department.chomp.split("|")
+    Department.create!(:name => name, :code => code, :country_id => country_id.strip)
   end
 end
 

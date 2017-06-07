@@ -8,7 +8,7 @@ es:
       msj_delete: "¿Esta seguro de eliminar este cliente?"
     cities:
       title: "Ciudades"
-    departaments:
+    departments:
       title: "Departamentos"
   attributes:
     clients:
@@ -19,7 +19,7 @@ es:
       number_document: "Número de documento"
       gender: "Sexo"
       country: "País"
-      departament: "Departamento"
+      department: "Departamento"
       city: "Ciudad"
       birthdate: "Fecha de nacimiento"
       female: "Femenino"
@@ -29,18 +29,18 @@ es:
       nom_city: "Nombre de la ciudad"
       cod_dep_city: "Código del departamento"
       dep_city: "Departamento"
-    departaments:
-      cod_departament: "Código"
-      nom_departament: "Nombre"
+    departments:
+      cod_department: "Código"
+      nom_department: "Nombre"
       cod_country_dep: "Código del país"
-      country_departament: "País"
+      country_department: "País"
   actions:
     log_in: "Iniciar sesión"
     log_out: "Terminar sesión"
     remember_me: "Recordarme"
     password: "Contraseña"
     email: "Email"
-    departaments: "Departamentos"
+    departments: "Departamentos"
     cities: "Ciudades"
     clients: "Clientes"
     create: "Crear"

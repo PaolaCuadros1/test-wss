@@ -15,7 +15,7 @@
     <% @cities.each do |city| %>
       <tr>
         <td><%= city.name %></td>
-        <td><%= city.depart_id.blank? ? '' : city.departament.name %></td>
+        <td><%= city.depart_id.blank? ? '' : city.department.name %></td>
         <td><%= link_to I18n.t('actions.show') , city %></td>
       </tr>
     <% end %>
