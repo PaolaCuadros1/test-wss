@@ -4,6 +4,16 @@
 
 <table>
   <thead>
+      <tr>
+        <td colspan="3" style="float: left;">
+          <%= form_tag cities_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag I18n.t('actions.search') %>
+            </p>
+          <% end %>
+        </td>
+    </tr>
     <tr>
       <th><%= I18n.t('attributes.cities.nom_city') %></th>
       <th><%= I18n.t('attributes.cities.dep_city') %></th>
