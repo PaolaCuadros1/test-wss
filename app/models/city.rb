@@ -9,4 +9,12 @@ class City
   
   belongs_to :department, foreign_key: "depart_id", primary_key: "code"
   
+  def self.search(search)
+    if search
+      City.where(name: /.*#{search}.*/i)
+    else
+      City.all
+    end
+  end
+  
 end
