@@ -1,73 +1,12 @@
 es:
-  models:
-    clients:
-      title: "Clientes"
-      showTitle: "Cliente"
-      new: "Registrar cliente"
-      edit: "Modificar cliente"
-      msj_delete: "¿Esta seguro de eliminar este cliente?"
-    cities:
-      title: "Ciudades"
-    departments:
-      title: "Departamentos"
-  attributes:
-    clients:
-      avatar: "Imagen"
-      first_name: "Nombre"
-      last_name: "Apellido"
-      type_document: "Tipo de documento"
-      number_document: "Número de documento"
-      gender: "Sexo"
-      country: "País"
-      department: "Departamento"
-      city: "Ciudad"
-      birthdate: "Fecha de nacimiento"
-      female: "Femenino"
-      male: "Masculino"
-    cities:
-      cod_city: "Código de la ciudad"
-      nom_city: "Nombre de la ciudad"
-      cod_dep_city: "Código del departamento"
-      dep_city: "Departamento"
-    departments:
-      cod_department: "Código"
-      nom_department: "Nombre"
-      cod_country_dep: "Código del país"
-      country_department: "País"
-  actions:
-    log_in: "Iniciar sesión"
-    log_out: "Terminar sesión"
-    remember_me: "Recordarme"
-    password: "Contraseña"
-    email: "Email"
-    departments: "Departamentos"
-    cities: "Ciudades"
-    clients: "Clientes"
-    create: "Crear"
-    modify: "Modificar"
-    delete: "Eliminar"
-    remember_me: "Recordarme"
-    back: "Regresar"
-    save_changes: "Guardar cambios"
-    edit: "Editar"
-    show: "Ver"
-    save: "Guardar"
-    go_to_list: "Volver"
   mongoid:
     errors:
-      models:
-        client:
-          attributes:
-            city:
-              blank: "No debe estar en blanco la ciudad"
-  will_paginate:
-    next_label: "Siguiente"
-    previous_label: "Anterior"
-    page_gap: ""
-  successful:
-    models:
-      clients:
-        created: "El cliente fue creado correctamente."
-        updated: "El cliente fue modificaco correctamente."
-        deleted: "El cliente fue eliminado correctamente."
-              
+      messages:
+        message_title: "Prueba"
+        summary_title: "Prueba summary"
+        resolution_title: "Prueba resolución"
+        document_not_found:
+          message: "Prueba"
+          summary: "summary"
+          resolution: "Prueba resolución"
+        
