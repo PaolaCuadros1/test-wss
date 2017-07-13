@@ -53,6 +53,7 @@ es:
     show: "Ver"
     save: "Guardar"
     go_to_list: "Volver"
+    search: "Buscar"
   mongoid:
     errors:
       models:
@@ -70,4 +71,4 @@ es:
         created: "El cliente fue creado correctamente."
         updated: "El cliente fue modificaco correctamente."
         deleted: "El cliente fue eliminado correctamente."
-              
+  

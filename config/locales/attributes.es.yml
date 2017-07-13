@@ -1,0 +1,12 @@
+es:
+  mongoid:
+    errors:
+      messages:
+        message_title: "Prueba"
+        summary_title: "Prueba summary"
+        resolution_title: "Prueba resolución"
+        document_not_found:
+          message: "Prueba"
+          summary: "summary"
+          resolution: "Prueba resolución"
+        
